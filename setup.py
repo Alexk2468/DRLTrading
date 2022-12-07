@@ -4,13 +4,14 @@ from setuptools import setup
 REQUIRES = []
 try:
     with open("requirements.txt", "rb") as f:
-        REQUIRES = [line.strip() for line in f.read().decode("utf-8").split("\n")]
+        REQUIRES = [line.strip()
+                    for line in f.read().decode("utf-8").split("\n")]
         REQUIRES = [line for line in REQUIRES if "#" not in line]
 except FileNotFoundError as myEx:
     raise Exception(myEx)
 
 setup(
-    name="finrl-meta",
+    name="drltrading",
     version="0.3.5",
     author="Xiao-Yang Liu, Ming Zhu, Jingyang Rui, Hongyang Yang",
     author_email="hy2500@columbia.edu",
